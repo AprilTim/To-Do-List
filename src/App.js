@@ -51,7 +51,7 @@ class App extends React.Component {
 
     //Запрос на создание новой задачи и добавление ее в state.
     createNewTask = () => {
-        return this.instance.post("https://test.megapolis-it.ru/api/list", {title: this.state.newTask.value})
+        return this.instance.post("", {title: this.state.newTask.value})
             .then(response => {
                 if (response.data.success) {
                     let newTask = {
@@ -120,7 +120,7 @@ class App extends React.Component {
         }, () => this.checkValidEditTask(text))
     }
 
-    //Проверка поля ввода новой задачи на валидность. Принимает в себя текст из поля ввода новой задачи.
+    //Проверка поля ввода редактируемой задачи на валидность. Принимает в себя текст из поля ввода редактируемой задачи.
     checkValidEditTask = (text) => {
         if (text !== '') {
             this.setState({
